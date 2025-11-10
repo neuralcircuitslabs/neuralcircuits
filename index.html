@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neural Circuits LLC</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#home" class="logo">Neural Circuits LLC</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <img src="img/hero.jpg" alt="Background" class="hero-bg">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>
+        <span class="hero-word">Detect.</span><br>
+        <span class="hero-word">Discover.</span><br>
+        <span class="hero-word">Understand.</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="fade-in light-section">
+    <div class="content-container">
+      <h2>About</h2>
+      <p>
+        Neural Circuits LLC applies scientific and computational methods to complex systems. We design instruments, models, and algorithms to measure, analyze, and interpret signals from neural activity to quantitative decision systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section id="mission" class="fade-in dark-section">
+    <div class="content-container">
+      <h2>Mission</h2>
+      <p class="mission-text">
+        We reveal patterns in complexity, integrating measurement and computation to turn data into understanding.
+      </p>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="fade-in light-section">
+    <div class="content-container">
+      <h2>Research</h2>
+
+      <div class="research-column slide-in">
+        <h3>What We Do</h3>
+        <p>
+          We measure, model, and analyze complex systems to reveal hidden patterns. Our focus spans neural interfaces, data acquisition, sensors, modeling, simulation, and system optimization.
+        </p>
+      </div>
+
+      <div class="research-column slide-in">
+        <h3>How We Do It</h3>
+        <p>
+          We combine advanced instrumentation with computational methods to make high-dimensional data interpretable. Our methods include custom instruments, algorithms, scientific computing, and system optimization.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in dark-section">
+    <div class="content-container">
+      <h2>Contact</h2>
+      <p>
+        Get in touch. 
+        <a href="mailto:info@neuralcircuits.com">info@neuralcircuits.com</a>.
+      </p>
+      <p>Located in the Washington, D.C. area.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Neural Circuits LLC. All rights reserved.</p>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script>
+    // Scroll fade-in for sections and slide-in columns
+    const faders = document.querySelectorAll('.fade-in, .slide-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Staggered hero words
+    const heroWords = document.querySelectorAll('.hero-word');
+    heroWords.forEach((word, index) => {
+      setTimeout(() => {
+        word.style.opacity = 1;
+        word.style.transform = "translateY(0)";
+      }, index * 600);
+    });
+  </script>
+
+</body>
+</html>
