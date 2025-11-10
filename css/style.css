@@ -65,6 +65,10 @@ nav {
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  background-image: url('/neuralcircuits/img/hero.jpg'); /* <- NEW line */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-bg {
